@@ -1,0 +1,73 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Overrides the server side code for additional checkout buttons
+.additional-checkout-button {
+	margin-top: 10px !important;
+	margin-left: 0 !important;
+	width: 100%;
+}
+
+.bg-image-gradient-1 {
+  background-image: asset-url('mycelium-gradient-1-sm.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+  .bg-image-gradient-1 {
+    background-image: asset-url('mycelium-gradient-1-sm@2x.jpg');
+  }
+}
+
+@media only screen and (min-width: 35em) {
+  .bg-image-gradient-1 {
+    background-image: asset-url('mycelium-gradient-1-md.jpg');
+  }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 35em),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 35em),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 35em),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 35em),
+only screen and (                min-resolution: 192dpi) and (min-width: 35em),
+only screen and (                min-resolution: 2dppx)  and (min-width: 35em) { 
+  .bg-image-gradient-1 {
+    background-image: asset-url('mycelium-gradient-1-md@2x.jpg');
+  }
+}
+
+@media only screen and (min-width: 65em) {
+  .bg-image-gradient-1 {
+    background-image: asset-url('mycelium-gradient-1-lg.jpg');
+  }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 65em),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 65em),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 65em),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 65em),
+only screen and (                min-resolution: 192dpi) and (min-width: 65em),
+only screen and (                min-resolution: 2dppx)  and (min-width: 65em) { 
+  .bg-image-gradient-1 {
+    // background-image: url('mycelium-gradient-1-lg@2x.jpg');
+    background-image: asset-url('mycelium-gradient-1-lg.jpg');
+  }
+}
+/* END HERO IMAGES */
+
+@media only screen and (min-width: 110em) {
+  .bg-image-gradient-1 {
+    // background-image: url('mycelium-gradient-1-lg@2x.jpg');
+    background-image: asset-url('mycelium-gradient-1-lg.jpg');
+  }
+}

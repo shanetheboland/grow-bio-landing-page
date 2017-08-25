@@ -1,0 +1,121 @@
+/* GLOBAL VARIABLES */
+$red: #FF0A5F;
+$pink: $red;
+$black: #20242B;
+$teal: #00665E;
+$near-white: #ecf0f1;
+$navy: #00153A;
+$dark-blue: $navy;
+
+@import "reset";
+@import "bootstrap";
+@import "core";
+@import "users";
+@import "tachyons";
+
+
+
+.copy-link{
+	border: 1px solid #D1D0C7;
+	background: #FFF;
+	padding: 10px 0;
+	width: 80%;
+	text-transform: none;
+	font-size: 14px;
+	margin: 20px auto 0;
+}
+
+.social-links{
+	width: 120px;
+	height: 37px;
+	margin: 25px auto 0;
+	text-align: center;
+}
+
+.social-links a, .social-links div{
+	display: inline-block;
+}
+
+.social-links .fb{
+	background: image-url("refer/fb.png");
+	background-size: 27px 27px;
+	width: 27px;
+	height: 27px;
+}
+
+.social-links .twit{
+	background: image-url("refer/twit.png");
+	background-size: 27px 27px;
+	width: 27px;
+	height: 27px;
+}
+
+.social-links .sep{
+	height: 28px;
+	width: 1px;
+	background: #BAB9BA;
+	margin: 0 20px;
+}
+
+
+
+
+.bg-bacteria { background-image: image-url('refer/bacteria.png'); }
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+	.bg-bacteria { background-image: image-url('refer/bacteria@2x.png'); }
+}
+
+
+
+
+.prize-two {
+	.two {
+		border-color: #19a974;
+		background-color: rgba(25,165,116,.12);
+		.circle-checkmark { display: block; }
+		.circle-x { display: none; }
+	}
+	.three, .four, .five {
+		.circle-checkmark { display: none; }
+		.circle-x { display: block; }
+	}
+}
+
+.prize-three {
+	.two, .three {
+		border-color: #19a974;
+		background-color: rgba(25,165,116,.12);
+		.circle-checkmark { display: block;}
+		.circle-x { display: none; }
+	}
+	.four, .five {
+		.circle-checkmark { display: none; }
+		.circle-x { display: block; }
+	}
+}
+
+.prize-four {
+	.two, .three, .four {
+		border-color: #19a974;
+		background-color: rgba(25,165,116,.12);
+		.circle-checkmark { display: block; }
+		.circle-x { display: none; }
+	}
+	.five {
+		.circle-checkmark { display: none; }
+		.circle-x { display: block; }
+	}
+}
+
+.prize-five {
+	.two, .three, .four, .five { border-color: #19a974; background-color: rgba(25,165,116,.12);}
+	.circle-checkmark { display: block; }
+	.circle-x { display: none; }
+}

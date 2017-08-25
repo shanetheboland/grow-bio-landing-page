@@ -1,0 +1,124 @@
+<section class="bg-navy white pv3 ph2 tc">
+  <div class="cf mw8 center">
+    <%= image_tag 'refer/logo-white.svg', class: 'mw4 center h-auto mb0' %>
+    <!-- <h2 class="f3 f1-l lh-title fw7 tc mt0">Welcome to the community!</h2> -->
+  </div>
+</section>
+
+<section class="bg-near-white black pv6 ph2 ph4-l tc bb bw1 b--moon-gray">
+  <div class="cf mw8 center">
+    <div class="fl-l w-100 w-50-l mb4 mb0-l bg-bacteria contain bg-center">
+      <h2 class="f1 lh-title fw9 tc ttu tracked pv6 white mw6 center" style="text-shadow:-4px 4px 4px rgba(0,0,0,0.42);">Born From Biology</h2>
+    </div>
+    <div class="fl-l w-100 w-50-l mb4 mb0-l">
+      <p class="f5 ttu tracked lh-title fw7 mid-gray mv0">Don’t Leave Your Friends Behind</p>
+      <h2 class="f2 lh-title fw9 tc ttu tracked mt0 mv3 navy">Invite friends & Earn Product</h2>
+      <p class="f5 lh-copy black measure-narrow center mv0">Share your unique link via email, Facebook or Twitter and earn discounts towards GROW kits for each friend who signs up.</p>
+
+      <div class="copy-link"><%= root_url %>?ref=<%= @user.referral_code %></div>
+      <% twitter_message = "Biomaterial kits, tutorials, and more! Excited for #growbio to launch." %>
+      <div class="social-links">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//grow.bio/?ref=<%= CGI::escape(@user.referral_code) %>" class="fb" target="_blank"></a>
+        <div class="sep"></div>
+        <a href="http://twitter.com/share?url=<%= CGI::escape(root_url) %>?ref=<%= CGI::escape(@user.referral_code) %>&text=<%= CGI::escape(twitter_message) %>" class="twit" target="_blank"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<br><br><br><br><br><br><br>
+
+
+<%
+  referrals_count = @user.referrals.count
+
+  stops = User::REFERRAL_STEPS
+
+  found = nil
+
+  stops.reverse_each { |stop|
+    if stop["count"] <= referrals_count and !found
+      stop["selected"] = true
+      found = stop
+    else
+      stop["selected"] = false
+    end
+  }
+%>
+
+
+
+
+<section class="tc prizes mw9 center <% if found %>prize-<%= found["class"] %><% end %>">
+  <h2 class="navy f4 lh-title fw7 ttu tracked tc mb4">Here’s How It Works:</h2>
+
+  <div class="cf db dt-l center tc">
+    <div class="db dtc-l pv4 ph3 bl br bt bw1 b--green mw5 mw-none-l w-100 w-20-l ba-l" style="background-color: rgba(25,165,116,.12);">
+      <div class="circle circle-checkmark b--green green">✓</div>
+      <p class="f6 ttu tracked lh-copy mv2"><strong>Enter Your Email</strong></p>
+      <p class="f4 lh-copy mid-gray mv0">Get invited when we launch</p>
+    </div><span class="dn dib-l">&nbsp;</span>
+    <% stops.each do |stop| %>
+      <div class="db dtc-l <%= stop["class"] %> <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last bb<% end %> pv4 ph3 bg-white bl br bt bw1 b--black mw5 mw-none-l w-100 w-20-l ba-l">
+        <div class="circle circle-checkmark b--green green">✓</div>
+        <div class="circle circle-x">X</div>
+        <%
+          friend_pluralize = ''
+          if stop["count"] > 1
+            friend_pluralize = 'friends'
+          else
+            friend_pluralize = 'friend'
+          end
+        %>
+
+        <p class="f6 ttu tracked lh-copy mv2"><strong>Refer <%= stop["count"] %> <%= friend_pluralize %></strong></p>
+        <p class="f4 lh-copy mid-gray mv0"><%= stop["html"].html_safe %></p>
+
+        <div class="tooltip">
+          <img src="<%= stop["image"] %>" height="254">
+        </div>
+
+      </div>
+      <% if stop["class"] != 'five' %><span class="dn dib-l">&nbsp;</span><% end %>
+    <% end %>
+  </div>
+
+    <%
+      words = ''
+      if referrals_count == 1
+        words = 'friend has'
+      else
+        words = 'friends have'
+      end
+    %>
+
+    <% if referrals_count == 0 %>
+      <p class="place"><span>No</span> friends have joined...Yet!</p>
+    <% else %>
+      <p class="place"><span><%= referrals_count %></span> <%= words %> joined</p>
+    <% end %>
+    <p class="check">Keep checking</p>
+
+    <p class="check"><a href="mailto:catch-all@grow.bio" class="link dim navy"><strong>Question?</strong> Email us.</a></p>
+
+</section>
+
+
+
+
+<!-- <div class="hero">
+  <div class="page-content clearfix">
+    <div class="mammoth">
+      <span class="need">Born From<br>Biology</span>
+    </div>
+    <div class="share-wrap">
+      <p class="why">Don't leave your friends behind</p>
+      <p class="title">INVITE FRIENDS &<br>Earn Product</p>
+      <p class="subtitle">Share your unique link via email, Facebook<br>or Twitter and earn discounts towards GROW.bio kits for<br>each friend who signs up.</p>
+    </div>
+  </div>
+</div> -->
+
+<p class="f5 tc lh-copy mv4 gray">We ship internationally. Everwhere except Australia (sorry Australia).</p>

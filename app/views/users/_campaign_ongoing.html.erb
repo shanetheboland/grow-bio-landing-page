@@ -1,0 +1,9 @@
+<div class="key"></div>
+<label for="mce-EMAIL" class="db f2 f1-l white mt3 mb2 mt4-l mb3-l fw7">Be the First to Know</label>
+<p class="f4 white fw4 lh-copy mb3 mt2 mb4-l mt3-l">We will be launching the site soon with biomaterial kits, tutorials, and a community.</p>
+
+
+<%= form_for @user, :url => { :action => "create" } do |f| %>
+  <%= f.text_field :email, :placeholder => "Enter Email", :class => "db w-100 f4 pa3 bg-white black bn br0 mv0 sans-serif" %>
+  <input class="ph4 pv3 mv3 mv4-l white tc f4 bn outline-0 grow pointer bg-red br0 sans-serif" name="commit" type="submit" value="Step Inside" />
+<% end %>

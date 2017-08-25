@@ -1,0 +1,56 @@
+<section class="bg-white pv2 ph3 ph4-l tl min-vh-100 vh-100 w-100 dt">
+  <div class="dtc v-mid">
+    <h1 class="f4 f2-m f1-l fw4 lh-copy mv0 mw9" style="color:#20242B;">We’ve spent a decade knee-deep in mushrooms. This is an open invite to <span class="fw5">makers</span>, <span class="fw6">dreamers</span>, <span class="fw5">the ones who can</span> <span class="fw6">see the invisible</span>, and believe in nature’s perfect design. Join us in the space where design, biology, and the future meet.</h1>
+    <p class="fw9 lh-title mt4 mb0 mw9 red" style="font-size: 8vw;">Born from Biology.</p>
+  </div>
+</section>
+
+<section class="bg-dark-blue w-100 bg-image-gradient-1 pv5 cover">
+  <p class="mv5">&nbsp;</p><!-- adds <p> tag so the <section> doesn’t collapse -->
+</section>
+
+<section class="bg-black white pv6 ph2 ph4-l tc">
+  <div class="cf mw8 center">
+    <h2 class="f1 lh-title fw9 tc ttu tracked mt0">Meet the Team</h2>
+    <div class="fl-ns w-100 w-33-ns mb4 mb0-ns pa2-m">
+      <!-- <img src="{{ 'mycelium-pink.png' | asset_url }}" srcset="{{ 'mycelium-pink@2x.png' | asset_url }} 2x" alt="Mycelium" itemprop="logo" class="mw-100 w5 h-auto br-100 mv2 v-mid"> -->
+      <%= image_tag ('mycelium-pink.png'), class: 'mw-100 w5 h-auto br-100 mv2 v-mid', alt: 'Mycelium' %>
+      <h3 class="f2 f3-m lh-title mv2 fw9">Mycelium</h3>
+      <ul class="f5 f6-m lh-copy dib tl mh0 mv2 pl3">
+        <li>Lightweight</li>
+        <li>Self-replicating</li>
+      </ul>
+      <p class="f5 f6-m lh-copy mv2"><strong>Known for:</strong> Building materials, packaging</p>
+    </div>
+    <div class="fl-ns w-100 w-33-ns mb4 mb0-ns pa2-m">
+      <!-- <img src="{{ 'yeast-pink.png' | asset_url }}" srcset="{{ 'yeast-pink@2x.png' | asset_url }} 2x" alt="Yeast" itemprop="logo" class="mw-100 w5 h-auto br-100 mv2 v-mid"> -->
+      <%= image_tag ('yeast-pink.png'), class: 'mw-100 w5 h-auto br-100 mv2 v-mid', alt: 'Yeast' %>
+      <h3 class="f2 f3-m lh-title mv2 fw9">Yeast</h3>
+      <ul class="f5 f6-m lh-copy dib tl mh0 mv2 pl3">
+        <li>Fermentation</li>
+        <li>500+ Species</li>
+      </ul>
+      <p class="f5 f6-m lh-copy mv2"><strong>Known for:</strong> Biotextiles</p>
+    </div>
+    <div class="fl-ns w-100 w-33-ns mb4 mb0-ns pa2-m">
+      <!-- <img src="{{ 'bacteria-pink.png' | asset_url }}" srcset="{{ 'bacteria-pink@2x.png' | asset_url }} 2x" alt="Bacteria" itemprop="logo" class="mw-100 w5 h-auto br-100 mv2 v-mid"> -->
+      <%= image_tag ('bacteria-pink.png'), class: 'mw-100 w5 h-auto br-100 mv2 v-mid', alt: 'Bacteria' %>
+      <h3 class="f2 f3-m lh-title mv2 fw9">Bacteria</h3>
+      <ul class="f5 f6-m lh-copy dib tl mh0 mv2 pl3">
+        <li>Transforms, grows & shrinks</li>
+        <li>Good for you</li>
+      </ul>
+      <p class="f5 f6-m lh-copy mv2"><strong>Known for:</strong> Dyes, cement</p>
+    </div>
+  </div>
+</section>
+
+<section class="pv5 ph3 ph4-l tl bg-dark-blue border-box">
+  <div class="mw6 center pv6 form-wrap clearfix <%= "ended" if Rails.application.config.ended %>">
+    <% if Rails.application.config.ended %>
+      <%= render "users/campaign_ended" %>
+    <% else %>
+      <%= render "users/campaign_ongoing" %>
+    <% end %>
+  </div>
+</section>
