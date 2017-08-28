@@ -60,7 +60,8 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
 
   # Temporarily Disable Asset Host for Test Server
-  # config.action_controller.asset_host = 'd3bkoyv4ng5tp5.cloudfront.net'
+  config.action_controller.asset_host = 'grow.bio'
+  config.action_mailer.asset_host = 'https://grow.bio'
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -78,9 +79,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.action_mailer.default_url_options = { host: 'grow.bio' }
-
+  
   ActionMailer::Base.smtp_settings = {
     :address        => "smtp.mailgun.org",
     :port           => 587,

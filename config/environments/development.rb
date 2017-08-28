@@ -40,10 +40,13 @@ Prelaunchr::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.action_controller.asset_host = 'localhost:3000'
+  config.action_mailer.asset_host = 'http://localhost:3000'
+
   # For mailer configs
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => ENV['DEFAULT_MAILER_HOST'] }
+  config.action_mailer.default_url_options = { host: 'localhost' }
 	config.action_mailer.delivery_method = :letter_opener
 	config.action_mailer.preview_path = "#{Rails.root}/test/mailers/previews"
 end
