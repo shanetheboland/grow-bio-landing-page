@@ -55,13 +55,13 @@
   <h2 class="navy f4 lh-title fw7 ttu tracked tc mb4">Here’s How It Works:</h2>
 
   <div class="cf db dt-l center tc">
-    <div class="db dtc-l pv4 ph3 bl br bt bw1 b--green mw5 mw-none-l w-100 w-20-l ba-l" style="background-color: rgba(25,165,116,.12);">
+    <div class="db dtc-l center pv4 ph3 bl br bt bw1 b--green mw5 mw-none-l w-100 w-20-l ba-l" style="background-color: rgba(25,165,116,.12);">
       <div class="circle circle-checkmark b--green green">✓</div>
       <p class="f6 ttu tracked lh-copy mv2"><strong>Enter Your Email</strong></p>
       <p class="f4 lh-copy mid-gray mv0">Get invited when we launch</p>
     </div><span class="dn dib-l">&nbsp;</span>
     <% stops.each do |stop| %>
-      <div class="db dtc-l <%= stop["class"] %> <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last bb<% end %> pv4 ph3 bg-white bl br bt bw1 b--black mw5 mw-none-l w-100 w-20-l ba-l">
+      <div class="db dtc-l center <%= stop["class"] %> <% if stop["selected"] %>selected<% end %> <% if stop["class"] == 'five' %>last bb<% end %> pv4 ph3 bg-white bl br bt bw1 b--black mw5 mw-none-l w-100 w-20-l ba-l">
         <div class="circle circle-checkmark b--green green">✓</div>
         <div class="circle circle-x">X</div>
         <%
@@ -95,10 +95,10 @@
     <% else %>
       <p class="place"><span><%= referrals_count %></span> <%= words %> joined</p>
     <% end %>
-    <p class="check">Keep checking</p>
+    <p class="check pointer" onClick="window.location.reload()">Keep checking</p>
     <br><br>
     <p class="f5 tc lh-copy gray">We ship internationally. Everwhere except Australia (sorry Australia).</p>
-    <p class="check mb5"><a href="mailto:catch-all@grow.bio" class="link dim navy"><strong>Question?</strong> Email us.</a></p>
+    <p class="check mb5"><a href="mailto:catch-all@grow.bio" class="link dim navy pointer"><strong>Question?</strong> Email us.</a></p>
 
 </section>
 
