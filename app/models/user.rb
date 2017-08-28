@@ -17,30 +17,22 @@ class User < ActiveRecord::Base
     {
       'count' => 1,
       'html' => '10&#37; Off Your First Kit',
-      'class' => 'two',
-      'image' =>  ActionController::Base.helpers.asset_path(
-        'refer/cream-tooltip@2x.png')
+      'class' => 'two'
     },
     {
       'count' => 3,
       'html' => '50&#37; Off Your First Kit',
-      'class' => 'three',
-      'image' => ActionController::Base.helpers.asset_path(
-        'refer/truman@2x.png')
+      'class' => 'three'
     },
     {
       'count' => 5,
       'html' => 'Free Kit',
-      'class' => 'four',
-      'image' => ActionController::Base.helpers.asset_path(
-        'refer/winston@2x.png')
+      'class' => 'four'
     },
     {
       'count' => 10,
       'html' => 'Three Free Kits',
-      'class' => 'five',
-      'image' => ActionController::Base.helpers.asset_path(
-        'refer/blade-explain@2x.png')
+      'class' => 'five'
     }
   ]
 

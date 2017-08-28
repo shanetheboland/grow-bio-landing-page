@@ -76,10 +76,6 @@
         <p class="f6 ttu tracked lh-copy mv2"><strong>Refer <%= stop["count"] %> <%= friend_pluralize %></strong></p>
         <p class="f4 lh-copy mid-gray mv0"><%= stop["html"].html_safe %></p>
 
-        <div class="tooltip">
-          <img src="<%= stop["image"] %>" height="254">
-        </div>
-
       </div>
       <% if stop["class"] != 'five' %><span class="dn dib-l">&nbsp;</span><% end %>
     <% end %>
@@ -100,8 +96,9 @@
       <p class="place"><span><%= referrals_count %></span> <%= words %> joined</p>
     <% end %>
     <p class="check">Keep checking</p>
-
-    <p class="check"><a href="mailto:catch-all@grow.bio" class="link dim navy"><strong>Question?</strong> Email us.</a></p>
+    <br><br>
+    <p class="f5 tc lh-copy gray">We ship internationally. Everwhere except Australia (sorry Australia).</p>
+    <p class="check mb5"><a href="mailto:catch-all@grow.bio" class="link dim navy"><strong>Question?</strong> Email us.</a></p>
 
 </section>
 
@@ -121,4 +118,3 @@
   </div>
 </div> -->
 
-<p class="f5 tc lh-copy mv4 gray">We ship internationally. Everwhere except Australia (sorry Australia).</p>

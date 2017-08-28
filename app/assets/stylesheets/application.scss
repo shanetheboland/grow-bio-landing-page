@@ -74,8 +74,12 @@ only screen and (                min-resolution: 2dppx) {
 
 
 
-
-.prize-two {
+.prizes {
+	.two, .three, .four, .five {
+		.circle-checkmark { display: none; }
+	}
+}
+.prizes.prize-two {
 	.two {
 		border-color: #19a974;
 		background-color: rgba(25,165,116,.12);
@@ -88,7 +92,7 @@ only screen and (                min-resolution: 2dppx) {
 	}
 }
 
-.prize-three {
+.prizes.prize-three {
 	.two, .three {
 		border-color: #19a974;
 		background-color: rgba(25,165,116,.12);
@@ -101,7 +105,7 @@ only screen and (                min-resolution: 2dppx) {
 	}
 }
 
-.prize-four {
+.prizes.prize-four {
 	.two, .three, .four {
 		border-color: #19a974;
 		background-color: rgba(25,165,116,.12);
@@ -114,7 +118,7 @@ only screen and (                min-resolution: 2dppx) {
 	}
 }
 
-.prize-five {
+.prizes.prize-five {
 	.two, .three, .four, .five { border-color: #19a974; background-color: rgba(25,165,116,.12);}
 	.circle-checkmark { display: block; }
 	.circle-x { display: none; }
