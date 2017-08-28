@@ -41,7 +41,7 @@ Prelaunchr::Application.configure do
   config.assets.debug = true
 
   config.action_controller.asset_host = 'localhost:3000'
-  config.action_mailer.asset_host = 'http://localhost:3000'
+  config.action_mailer.asset_host = 'https://localhost:3000'
 
   # For mailer configs
   config.action_mailer.perform_deliveries = true
