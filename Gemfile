@@ -25,6 +25,7 @@ group :development, :test do
   gem 'rspec-mocks', '3.4.1'
   gem 'test-unit', '~> 3.0'
   gem "dotenv-rails"
+	gem 'letter_opener'
 end
 
 # To use ActiveModel has_secure_password
