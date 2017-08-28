@@ -60,8 +60,8 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
 
   # Temporarily Disable Asset Host for Test Server
-  config.action_controller.asset_host = 'grow.bio'
-  config.action_mailer.asset_host = 'https://grow.bio'
+  config.action_controller.asset_host = 'grow-bio-landing-page.herokuapp.com'
+  config.action_mailer.asset_host = 'https://grow-bio-landing-page.herokuapp.com'
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
