@@ -5,6 +5,7 @@
 <!--[if IE 9 ]>    <html class="ie9 <%= @bodyId %>"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="<%= @bodyId %>"> <!--<![endif]-->
 <head>
+  <%= render 'layouts/critical_css' %>
   <title>GROW.bio - Biomaterial Kits that you can actually buy</title>
   <link rel="icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
   <link rel="shortcut icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
@@ -17,7 +18,6 @@
   <meta property="og:description" content="We’re changing the way mankind makes products. #GrowBio #BornFromBiology"/>
   <meta property="og:image" content="<%= asset_path("email/grow-bio-is-coming.png") %>"/>
   <meta property="og:url" content="<%= root_url %>"/>
-  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body id="<%= @bodyId %>" class="bg-white sans-serif black">
@@ -25,6 +25,6 @@
 <%= yield %>
 
 <%= render 'layouts/footer' %>
-
+<%= stylesheet_link_tag "application", :media => "all" %>
 </body>
 </html>
