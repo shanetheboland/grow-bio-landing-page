@@ -16,15 +16,21 @@ class UsersController < ApplicationController
   def create
     ref_code = cookies[:h_ref]
     email = params[:user][:email]
-    @user = User.new(email: email)
-    @user.referrer = User.find_by_referral_code(ref_code) if ref_code
 
-    if @user.save
-      cookies[:h_email] = { value: @user.email }
+    if User.where(email: email).present?
+      cookies[:h_email] = { value: email }
       redirect_to '/refer-a-friend'
     else
-      logger.info("Error saving user with email, #{email}")
-      redirect_to root_path, alert: 'Something went wrong!'
+      @user = User.new(email: email)
+      @user.referrer = User.find_by_referral_code(ref_code) if ref_code
+
+      if @user.save
+        cookies[:h_email] = { value: @user.email }
+        redirect_to '/refer-a-friend'
+      else
+        logger.info("Error saving user with email, #{email}")
+        redirect_to root_path, alert: 'Something went wrong!'
+      end
     end
   end
 
