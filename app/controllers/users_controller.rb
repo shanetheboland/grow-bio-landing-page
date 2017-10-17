@@ -61,6 +61,10 @@ class UsersController < ApplicationController
   def skip_first_page
     return if Rails.application.config.ended
 
+    if params[:email].present?
+      cookies[:h_email] = params[:email]
+    end
+
     email = cookies[:h_email]
     if email && User.find_by_email(email)
       redirect_to '/refer-a-friend'
